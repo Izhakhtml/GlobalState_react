@@ -1,9 +1,22 @@
-const Reducers = (state,action)=>{
-   switch (action.type) {
-       case "good luck":
-           return state = "good luck"  
-       default:
-           return state
-   } 
+import { GOODLUCK, PRIMARY, SECONDARY, ERROR, INFO, WARNING, SHOW } from '../actions/Massage-types'
+const Reducers = (state, action) => {
+    switch (action.type) {
+        case GOODLUCK:
+            return action.payload;
+        case PRIMARY:
+            return action.payload;
+        case SECONDARY:
+            return action.payload;
+        case ERROR:
+            return action.payload;
+        case INFO:
+            return action.payload;
+        case WARNING:
+            return action.payload;
+        case SHOW:
+            return {...action.payload,isOpen:true};
+        default:
+            return state
+    }
 }
 export default Reducers;

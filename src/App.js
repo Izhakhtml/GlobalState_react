@@ -1,11 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-import Massages from './components/massage/Massage.component';
+import { MsgProvider } from './context/Massage-context.component';
+import Header from './components/parts/header/Header.component';
+import Footer from './components/parts/footer/Footer.component';
+import Home from './components/home/Home.component';
 function App() {
   return (
     <div className="App">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Massages/>
+      <Header/>
+      <Footer/>
+        <MsgProvider>
+            <Home/>       
+        </MsgProvider>
     </div>
   );
 }

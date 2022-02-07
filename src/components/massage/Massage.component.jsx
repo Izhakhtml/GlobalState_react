@@ -1,16 +1,19 @@
-import React,{useReducer} from "react";
-import MassageAction from "../../actions/Massage-actions";
-import Reducers from "../../reducers/Massage-reducer";
+import React,{useContext} from "react";
+import {GoodLuckAction,PrimaryAction} from "../../actions/Massage-actions";
+import { MsgContext } from "../../context/Massage-context.component";
 const Massages = ()=>{
-const[mass,dispatch]=useReducer(Reducers,"massage");
+const {mass,dispatch} = useContext(MsgContext);
 const Click =()=>{
-dispatch(MassageAction())    
+dispatch(GoodLuckAction("success"))    
+} 
+const Click2 =()=>{
+dispatch(PrimaryAction("primary"))    
 } 
 return(
-  <div>
-       <h1>{mass}</h1>
-       <button onClick={Click}>CLICK</button>
-
+  <div >
+       <h1 >massage state:{mass.isOpen}</h1>
+       <button onClick={Click}>Success</button> 
+       <button onClick={Click2}>Primary</button>
   </div>
 )    
 }
