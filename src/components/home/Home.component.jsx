@@ -6,8 +6,8 @@ const Home =()=>{
 const{mass,dispatch} = useContext(MsgContext);
 return(
     <div id="main">
-        <h1>mass:{mass.isOpen||<div></div>}</h1>
-        <button onClick={()=>{dispatch(ShowAction())}}>home btn</button>
+        <h1>mass:{mass.isOpen||<div>{mass.tex}</div>}</h1>
+        <button onClick={()=>{dispatch(ShowAction({text:"hello world"}))}}>home btn</button>
         <Massages/>
     </div>
 )  

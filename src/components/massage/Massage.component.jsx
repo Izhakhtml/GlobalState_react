@@ -11,7 +11,7 @@ dispatch(PrimaryAction("primary"))
 } 
 return(
   <div >
-       <h1 >massage state:{mass.isOpen}</h1>
+       <h1>massage state:{mass.isOpen}</h1>
        <button onClick={Click}>Success</button> 
        <button onClick={Click2}>Primary</button>
   </div>
