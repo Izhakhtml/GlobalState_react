@@ -2,7 +2,7 @@ import React,{useReducer} from "react";
 import Reducers from '../reducers/Massage-reducer'
 export const MsgContext = React.createContext();
 export const MsgProvider = ({children})=>{
-const [mass,dispatch] =useReducer(Reducers,{isOpen:true});
+const [mass,dispatch] =useReducer(Reducers,{});
 return(
     <MsgContext.Provider value={{mass,dispatch}}>
         {children}

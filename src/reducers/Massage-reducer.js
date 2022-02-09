@@ -2,7 +2,7 @@ import { GOODLUCK, PRIMARY, SECONDARY, ERROR, INFO, WARNING, SHOW } from '../act
 const Reducers = (state, action) => {
     switch (action.type) {
         case GOODLUCK:
-            return action.payload;
+            return {...state,isOpen:true,...action.payload};
         case PRIMARY:
             return action.payload;
         case SECONDARY:
@@ -14,7 +14,7 @@ const Reducers = (state, action) => {
         case WARNING:
             return action.payload;
         case SHOW:
-            return {...action.payload,isOpen:true};
+            return {...state,isOpen:false};
         default:
             return state
     }
